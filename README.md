@@ -12,6 +12,5 @@ ipcw_weights_landmark - takes landmark survival data and calculates IPCW weights
 function-bn-fit-weighted.R - parameter learning for a Bayesian network using IPCW weights to account for censoring.  
 
 fit-landmark-beta-calibration.R - Calibrating model predictions using a beta calibration model. An extension of Kull et al. (2017) (https://proceedings.mlr.press/v54/kull17a.html) for right-censored, landmarking data.  
-sim-landmark-predict-data.R - Simulation of data that resembles the predictions produced by a landmarking model predicting 1-year risk of PsA at each landmark. Run prior to fit-landmark-beta-calibration.R to showcase the calibration method.
-
+sim-landmark-predict-data.R - Simulation of data that resembles the predictions produced by a landmarking model predicting 1-year risk of PsA at each landmark. Simulated data can be used to run fit-landmark-beta-calibration.R.
 
