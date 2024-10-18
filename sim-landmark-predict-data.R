@@ -39,37 +39,13 @@ data %<>%
 
 
 # IPCW weights
-# Simulate weights - some should be zero if they do not experience an event
+# For the purpose of this example, letting everyone have a weight of 1 is sufficient.
 data %<>%
-  dplyr::rowwise() %>%
-  dplyr::mutate(ipcw_weight = dplyr::case_when(
-    status == 0 ~ sample(
-      x = c(0, runif(
-        n = 1, min = 0, max = 3
-      )),
-      size = 1,
-      prob = c(0.2, 0.8)
-    ),
-    status == 1 ~ runif(n = 1, min = 0, max = 3)
-  ))
-                  
-# data %<>%
-#   dplyr::mutate(ipcw_weight = 1)
+  dplyr::mutate(ipcw_weight = 1)
+  
                   
                   
-                  
-
-
-# Calculate calibration
-
-# Weak calibration
-data %>%
-  dplyr::group_by(landmark) %>%
-  dplyr::summarise(
-    mean_prediction = mean(prob_event),
-    class_proportion = sum((status == 1)*ipcw_weight)/(sum(ipcw_weight))
-  ) %>%
-  dplyr::mutate(ratio = mean_prediction/class_proportion)
+  
 
 
 
