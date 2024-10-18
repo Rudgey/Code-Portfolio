@@ -32,9 +32,9 @@ fit.weighted.cpt <- function(node, parents, data, weights, target) {
   
   
   # Dimension of CPT
-  xdim <- x %>% map_int(., .f = nlevels) %>% unname()
+  xdim <- x %>% purrr::map_int(., .f = nlevels) %>% unname()
   
-  ydim <- y %>% map_int(., .f = nlevels) %>% unname()
+  ydim <- y %>% purrr::map_int(., .f = nlevels) %>% unname()
   
   dims <- c(xdim, ydim)
   
@@ -55,7 +55,7 @@ fit.weighted.network <- function(structure, data, weights, target) {
   nodes <- bnlearn::nodes(structure)
   weights <- weights
   
-  fitted_cpts <- map(
+  fitted_cpts <- purrr::map(
     nodes,
     .f = function(x)
       fit.weighted.cpt(
