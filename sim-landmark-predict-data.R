@@ -39,9 +39,22 @@ data %<>%
 
 
 # IPCW weights
-# For the purpose of this example, letting everyone have a weight of 1 is sufficient.
+# Simulate weights - probably not that realistic but good enough for this.
+# If status == 0, you may be censored, or you may have made it event free to the 
+# end of the prediction window.
+# If censored, weight is 0, it not censored, weight will be fixed at, say, 3.
+# If status == 1, you will have a non-zero weight between 0 and 3.
+
 data %<>%
-  dplyr::mutate(ipcw_weight = 1)
+  dplyr::rowwise() %>%
+  dplyr::mutate(ipcw_weight = dplyr::case_when(
+    status == 0 ~ sample(
+      x = c(0, 3),
+      size = 1,
+      prob = c(0.2, 0.8)
+    ),
+    status == 1 ~ runif(n = 1, min = 0, max = 3)
+  ))
   
                   
                   
