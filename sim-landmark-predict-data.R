@@ -10,6 +10,7 @@ data <- tibble(
   prob_event = runif(n, min = 0, max = 1),
 )
 
+# prob_event is the probability of experiencing an event within some fixed time window from the landmark.
 # Use probability to create a status but with some error
 
 data %<>%
