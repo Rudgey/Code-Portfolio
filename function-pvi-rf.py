@@ -3,6 +3,8 @@ import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 import random
 
+# Function to compute variable importance for a random forest classifier.
+
 
 def variable_importance_rf(model, data, variable, nrep = 5):
   
