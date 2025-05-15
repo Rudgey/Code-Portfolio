@@ -23,7 +23,7 @@ fit.weighted.cpt <- function(node, parents, data, weights, target) {
     # Non-zero weights only
     dplyr::filter(w != 0) %>%
     dplyr::group_by(dplyr::across(tidyselect::all_of(c(node, parents))), .drop = FALSE) %>%
-    # Lapalce smoothing to prevent probabilities of 0 or 1 when calculating counts
+    # Smoothing to prevent probabilities of 0 or 1 when calculating counts
     dplyr::summarise(count = sum(w) + 1, .groups = 'drop') %>%
     dplyr::arrange(dplyr::across(tidyselect::all_of(rev(parents)))) %>%
     dplyr::group_by(dplyr::across(tidyselect::all_of(parents)), .drop = FALSE) %>%
