@@ -15,3 +15,10 @@ fit-landmark-beta-calibration.R - Calibrating model predictions using a beta cal
   
 sim-landmark-predict-data.R - Simulation of data that resembles the predictions produced by a landmarking model predicting 1-year risk of PsA at each landmark. Simulated data can be used to run fit-landmark-beta-calibration.R.
 
+# Python
+We also took a static approach to modelling, as shown in the published manuscript
+Rudge A, Tillett W, McHugh NJ, Smith TR. An interpretable machine learning approach for predicting psoriatic arthritis in a UK primary care psoriasis cohort using electronic health records from the Clinical Practice Research Datalink. Annals of the Rheumatic Diseases 2025, doi: https://doi.org/10.1016/j.ard.2025.01.051.
+
+Python was preferred for fitting a Random forest model. 
+
+We interpreted how the model was operating using permutation variable importance and partial dependence plots.
