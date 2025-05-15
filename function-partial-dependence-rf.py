@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 import random
 
-# Function to compute partial dependence probabilities for a Random forest classifier.
+# Function to compute partial dependence probabilities for a random forest classifier.
 
 
 def partial_dependence_rf(data, model, variable):
