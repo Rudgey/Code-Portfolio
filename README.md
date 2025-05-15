@@ -17,8 +17,11 @@ sim-landmark-predict-data.R - Simulation of data that resembles the predictions 
 
 # Python
 We also took a static approach to modelling, as shown in the published manuscript
+
 Rudge A, Tillett W, McHugh NJ, Smith TR. An interpretable machine learning approach for predicting psoriatic arthritis in a UK primary care psoriasis cohort using electronic health records from the Clinical Practice Research Datalink. Annals of the Rheumatic Diseases 2025, doi: https://doi.org/10.1016/j.ard.2025.01.051.
 
 Python was preferred for fitting a Random forest model. 
 
-We interpreted how the model was operating using permutation variable importance and partial dependence plots.
+function-partial-dependence-rf.py - We used partial dependence plots to evaluate the directions of associations between each variable and the binary outcome.
+
+function-pvi-rf.py - We used permutation variable importance to determine the most important model predictors.
