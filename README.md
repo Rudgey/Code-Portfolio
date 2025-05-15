@@ -1,8 +1,8 @@
 # Code Portfolio
-The purpose of this repository is to showcase some of code developed for my PhD project   
-**Predicting Psoriatic Arthritis (PREDIPSA) - Dynamic modelling of primary care health-records for earlier diagnosis of psoriatic arthritis.**  
+The purpose of this repository is to showcase code developed as part of my PhD project   
+**Predicting Psoriatic Arthritis (PREDIPSA) - Dynamic modelling of primary care health-records for earlier diagnosis of psoriatic arthritis.** 
 
-We developed a dynamic prediction model using a landmarking approach. At each landmark, we predict the 1-year risk of psoriatic arthritis using a Bayesian network. Bayesian networks are not typically used for survival data, and so we use inverse probability of censoring weights (IPCW) to account for right-censored observations. UK primary care electronic health records (EHRs) from the Clinical Practice Research Datalink (CPRD) were used to develop the models.  
+To summarise the research, we developed a dynamic prediction model using a landmarking approach, where at each landmark we estimated the 1-year risk of developing psoriatic arthritis. Bayesian networks were the primary model of choice, which are not typically used for survival data and so we use inverse probability of censoring weights (IPCW) to account for right-censored observations. Models were developed using UK primary care electronic health records (EHRs) from the Clinical Practice Research Datalink (CPRD).  
   
 # R Scripts
 function-create-landmark-data.R - a function that takes data and turns it into a landmarking format. Data inputted is in a form where each row is a dated observation containing the current values for all variables. A row only exists when one of these variables changes.  
